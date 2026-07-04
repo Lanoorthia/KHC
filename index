@@ -1,0 +1,398 @@
+import os
+from weasyprint import HTML
+
+html_content = """
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>แผนโครงสร้างและเนื้อหาเว็บไซต์ใหม่ - King Health Care</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        @page {
+            size: A4;
+            margin: 20mm 15mm;
+            background-color: #ffffff;
+            @bottom-right {
+                content: counter(page);
+                font-size: 9pt;
+                font-family: 'Garuda', 'Loma', sans-serif;
+                color: #888888;
+            }
+            @bottom-left {
+                content: "King Health Care Website Blueprint";
+                font-size: 9pt;
+                font-family: 'Garuda', 'Loma', sans-serif;
+                color: #888888;
+            }
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Garuda', 'Loma', 'Segoe UI', sans-serif;
+            color: #333333;
+            line-height: 1.6;
+            font-size: 11pt;
+        }
+        
+        /* Banner Header */
+        .header-banner {
+            background-color: #db548a;
+            color: #ffffff;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .header-banner h1 {
+            margin: 0;
+            font-size: 22pt;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .header-banner p {
+            margin: 10px 0 0 0;
+            font-size: 12pt;
+            opacity: 0.9;
+        }
+
+        h2 {
+            font-size: 15pt;
+            color: #db548a;
+            border-left: 5px solid #db548a;
+            padding-left: 10px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            page-break-after: avoid;
+        }
+        
+        h3 {
+            font-size: 12pt;
+            color: #2c3e50;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            page-break-after: avoid;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin-top: 0;
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        /* Mockup Web Elements */
+        .web-window {
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            margin-bottom: 25px;
+            background-color: #fafafa;
+            page-break-inside: avoid;
+        }
+        .web-nav {
+            background-color: #db548a;
+            color: white;
+            padding: 10px 15px;
+            font-size: 10pt;
+            font-weight: bold;
+        }
+        .web-nav span {
+            margin-right: 15px;
+        }
+        .web-body {
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        
+        /* Button Style */
+        .btn-cta {
+            display: inline-block;
+            background-color: #db548a;
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 9.5pt;
+            font-weight: bold;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        .btn-store {
+            display: inline-block;
+            background-color: #2c3e50;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 9pt;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        .btn-shopee { background-color: #ff5500; }
+        .btn-lazada { background-color: #000080; }
+        .btn-line { background-color: #06c755; }
+        .btn-tiktok { background-color: #000000; }
+
+        /* Tables for Data and Layouts */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-size: 10pt;
+        }
+        th, td {
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background-color: #fce4ec;
+            color: #db548a;
+            font-weight: bold;
+        }
+        .product-table td {
+            width: 33.33%;
+        }
+        .product-card {
+            background: #ffffff;
+            border: 1px solid #f0f0f0;
+            padding: 12px;
+            border-radius: 6px;
+            text-align: center;
+        }
+        .product-title {
+            font-weight: bold;
+            color: #db548a;
+            margin-bottom: 8px;
+            font-size: 11pt;
+        }
+        .product-desc {
+            font-size: 9pt;
+            color: #666666;
+            margin-bottom: 12px;
+            height: 60px;
+            text-align: left;
+        }
+        
+        .badge {
+            background-color: #db548a;
+            color: white;
+            font-size: 8pt;
+            padding: 2px 6px;
+            border-radius: 3px;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .highlight-box {
+            background-color: #fff4f8;
+            border-left: 4px solid #db548a;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 0 6px 6px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-banner">
+        <h1>KING HEALTH CARE (ตราเภสัชกร)</h1>
+        <p>แผนโครงสร้างเว็บไซต์และเนื้อหารูปแบบใหม่ (E-Commerce & Modern UI Blueprint)</p>
+    </div>
+
+    <div class="highlight-box">
+        <strong>วัตถุประสงค์การปรับปรุงเว็บไซต์:</strong> เพื่อเปลี่ยนโฉมเว็บไซต์แบรนด์ "เภสัชกร" ให้มีความทันสมัย รองรับการใช้งานบนมือถือ (Mobile Responsive) และเพิ่มช่องทางการขายออนไลน์อย่างเต็มรูปแบบ (E-Commerce Integration) เชื่อมต่อสู่แพลตฟอร์มหลัก Shopee, Lazada, TikTok Shop และ LINE OA เพื่อความสะดวกสูงสุดของผู้บริโภค
+    </div>
+
+    <h2>1. โครงสร้างเมนูหลักของเว็บไซต์ (New Site Navigation)</h2>
+    <p>แถบเมนูด้านบน (Main Navigation Bar) จะปรับให้กระชับ เข้าถึงง่าย และเน้นปุ่มสั่งซื้อที่โดดเด่น:</p>
+    
+    <div class="web-window">
+        <div class="web-nav">
+            <span>🏠 หน้าแรก (Home)</span>
+            <span>✨ ผลิตภัณฑ์ของเรา (Products)</span>
+            <span>🌸 เกี่ยวกับเรา (About Us)</span>
+            <span>📍 ร้านค้าตัวแทนจำหน่าย (Distributors)</span>
+            <span>📞 ติดต่อเรา (Contact)</span>
+            <span style="float: right; background: white; color: #db548a; padding: 2px 10px; border-radius: 12px; font-size: 9pt;">🛒 ช้อปออนไลน์</span>
+        </div>
+    </div>
+
+    <h2>2. รายละเอียดโครงสร้างเนื้อหาแต่ละหน้า (Page-by-Page Content & Layout)</h2>
+
+    <h3>หน้าที 1: หน้าแรก (Homepage)</h3>
+    <ul>
+        <li><strong>ส่วนที่ 1: Banner สไลด์ต้อนรับ (Hero Slider)</strong>
+            <br>ภาพสินค้าจัดวางแบบมินิมอล พื้นหลังสีพาสเทล พร้อมข้อความสโลแกน เช่น <em>"ดูแลเรียวปากอย่างผู้เชี่ยวชาญ คัดสรรเพื่อผิวแพ้ง่าย โดยเภสัชกร"</em> พร้อมปุ่ม CTA ขนาดใหญ่: <a href="#" class="btn-cta">ช้อปสินค้าตอนนี้</a>
+        </li>
+        <li><strong>ส่วนที่ 2: ทางลัดช่องทางการซื้อออนไลน์ (Quick Purchase Channels)</strong>
+            <br>รวมไอคอนร้านค้าหลักของแบรนด์ให้กดง่ายๆ:
+            <br>
+            <span class="btn-store btn-shopee">Shopee Official</span>
+            <span class="btn-store btn-lazada">Lazada Store</span>
+            <span class="btn-store btn-line">LINE OA (@kinghealthcare)</span>
+            <span class="btn-store btn-tiktok">TikTok Shop</span>
+        </li>
+        <li><strong>ส่วนที่ 3: สินค้าแนะนำ (Featured Products)</strong>
+            <br>แสดงสินค้าไฮไลท์ 3 ตัวหลักในรูปแบบการ์ดที่สวยงาม (รายละเอียดในข้อถัดไป)
+        </li>
+    </ul>
+
+    <div style="page-break-before: always;"></div>
+
+    <h3>หน้าที 2: หน้าผลิตภัณฑ์ของเรา (Our Products)</h3>
+    <p>ปรับรูปแบบการแสดงผลเป็น <strong>Product Grid Table</strong> ที่แสดงรูปภาพ ชื่อสรรพคุณ และช่องทางการสั่งซื้อออนไลน์ของแต่ละสินค้าโดยตรง เพื่อปิดการขายได้ทันที:</p>
+
+    <table class="product-table">
+        <tr>
+            <td>
+                <div class="product-card">
+                    <span class="badge">ผลิตภัณฑ์แนะนำ</span>
+                    <div class="product-title">Ultra Lip Treatment</div>
+                    <div class="product-desc">สูตร Anti-Aging and Moisture Lock (ขนาด 4.5 กรัม) ช่วยลดเลือนริ้วรอยร่องลึก ชะลอความเสื่อมของเซลล์ผิว พร้อมล็อคความชุ่มชื้นยาวนาน</div>
+                    <div style="margin-top: 10px;">
+                        <a href="https://shopee.co.th" class="btn-store btn-shopee" target="_blank">Shopee</a>
+                        <a href="https://lazada.co.th" class="btn-store btn-lazada" target="_blank">Lazada</a>
+                        <a href="https://tiktok.com" class="btn-store btn-tiktok" target="_blank">TikTok</a>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="product-card">
+                    <span class="badge">สูตรอ่อนโยน</span>
+                    <div class="product-title">Soft Lip Care Pink</div>
+                    <div class="product-desc">สูตร Natural Herb กลิ่นหอมละมุน อุดมด้วยสารสกัดธรรมชาติ เหมาะสำหรับริมฝีปากที่บอบบางและแพ้ง่าย ให้สีชมพูระเรื่อเป็นธรรมชาติ</div>
+                    <div style="margin-top: 10px;">
+                        <a href="https://shopee.co.th" class="btn-store btn-shopee" target="_blank">Shopee</a>
+                        <a href="https://lazada.co.th" class="btn-store btn-lazada" target="_blank">Lazada</a>
+                        <a href="https://line.me" class="btn-store btn-line" target="_blank">LINE สั่งซื้อ</a>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="product-card">
+                    <span class="badge">สินค้าขายดีตลอดกาล</span>
+                    <div class="product-title">Lips Care</div>
+                    <div class="product-desc">ลิปบาล์มตลับชมพูในตำนาน สูตรดั้งเดิมของแบรนด์เภสัชกร บำรุงริมฝีปากให้เนียนนุ่ม ชุ่มชื้นยาวนาน ไม่เหนียวเหนอะหนะ ราคาคุ้มค่า</div>
+                    <div style="margin-top: 10px;">
+                        <a href="https://shopee.co.th" class="btn-store btn-shopee" target="_blank">Shopee</a>
+                        <a href="https://lazada.co.th" class="btn-store btn-lazada" target="_blank">Lazada</a>
+                        <a href="https://tiktok.com" class="btn-store btn-tiktok" target="_blank">TikTok</a>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <h3>หน้าที 3: เกี่ยวกับเรา (About Us)</h3>
+    <p>ปรับการจัดวางเนื้อหา 2 ภาษา (ไทย-อังกฤษ) ให้เรียบหรู น่าเชื่อถือ เพิ่มสัดส่วนพื้นที่ว่าง (White Space) เพื่อให้อ่านง่าย:</p>
+    
+    <table style="background-color: #fafafa;">
+        <tr>
+            <th style="width: 50%;">ภาษาไทย (Thai Version)</th>
+            <th style="width: 50%;">ภาษาอังกฤษ (English Version)</th>
+        </tr>
+        <tr>
+            <td>
+                <strong>ข้อมูลประวัติความเป็นมา</strong><br>
+                ผลิตภัณฑ์ตราเภสัชกรได้มีจุดเริ่มต้นจากเภสัชกรท่านหนึ่ง ท่านมีความต้องการที่จะผลิตสินค้าที่มีคุณภาพและราคาเหมาะสมเพื่อให้คนไทยทุกคนได้มีโอกาสใช้ จึงคิดค้นและพัฒนาสูตรผลิตภัณฑ์บำรุงริมฝีปาก และใช้ชื่อแบรนด์ว่า "เภสัชกร" เพื่อเป็นการสื่อสารให้ทุกคนรู้จักอาชีพเภสัชกรมากขึ้น
+                <br><br>
+                <strong>พันธกิจขององค์กร</strong><br>
+                เรามีความมุ่งมั่นคิดค้นและพัฒนาผลิตภัณฑ์สำหรับดูแลริมฝีปากเพื่อผู้บริโภคทุกคน
+            </td>
+            <td>
+                <strong>Who are we?</strong><br>
+                Our lip balm product was initially launched by a Certified Pharmacist who has had a strong passion to create a high-quality but affordable lip treatment product for Thai people. Therefore, she named it, "Pharmacist" to represent and promote the great value of her beloved career.
+                <br><br>
+                <strong>Our Mission</strong><br>
+                We are strongly determined to create a premium lip treatment product for everyone.
+            </td>
+        </tr>
+    </table>
+
+    <div style="page-break-before: always;"></div>
+
+    <h3>หน้าที 4: ร้านค้าตัวแทนจำหน่าย (Distributors)</h3>
+    <p>ปรับโฉมจากตารางธรรมดา เป็นระบบจำแนกภูมิภาคที่ชัดเจน พร้อมเพิ่มไอคอนค้นหาบนเว็บไซต์จริง ในเอกสารนี้สรุปรายชื่อผู้จัดจำหน่ายหลักเพื่อให้โปรแกรมเมอร์นำไปลงฐานข้อมูลดังนี้:</p>
+
+    <table>
+        <tr>
+            <th style="width: 25%;">ภูมิภาค</th>
+            <th style="width: 75%;">รายชื่อตัวแทนจำหน่ายและเบอร์โทรศัพท์ติดต่อ</th>
+        </tr>
+        <tr>
+            <td style="font-weight: bold; color: #db548a;">ภาคกลาง</td>
+            <td>
+                Siampharmacy (02-938-6041) | ทรงคุณโอสถ (02-221-6644) | คลังยา26 (02-243-3032) | Pharmahof (02-889-5820) | วิฑูรเภสัช (02-279-2690) | P.K.S (02-424-6400) | TPD (02-426-2646) | Drugserv (02-906-3470) | สมชายเวชภัณฑ์ (02-932-6142) | วรมิตร (02-753-4704) | Modernhealthmart บุญสิน (02-862-0590) | วิบูลย์ฟาร์มา (081-887-2233)
+            </td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold; color: #db548a;">ภาคเหนือ</td>
+            <td>
+                ส.เภสัชกร (053-321-2894) | น้ำเคี้ยวโอสถ (054-224-823) | ช.เภสัช หน้าแอดติ้ง (054-227-890) | เอ็น.บี.ฟาร์ม่า (054-311-122) | ชัยบำรุงโอสถ (056-213-385) | พิษณุโลกคลังยา (02-685-1100) | PTN Pharma Center (056-371-370) | ชัยคลังยา (055-711-305) | สยามชัยเภสัช (053-273-159)
+            </td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold; color: #db548a;">ภาคตะวันออก</td>
+            <td>
+                ธัชชัย เภสัช (081-865-2196) | หมอยาสุรินทร์ (081-718-3180) | วีระเภสัช (086-813-5237) | เมืองทองเภสัช (045-324-647) | ไพบูลย์เภสัช (038-611-847) | บุษบาฟาร์มาซี (043-514-572) | Drugcenter (089-710-0524)
+            </td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold; color: #db548a;">ภาคตะวันตก</td>
+            <td>
+                บ้วนสุนโอสถ 2 (034-258-439) | รัญญะไทย (032-337-314)
+            </td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold; color: #db548a;">ภาคใต้</td>
+            <td>
+                ครอบครัวยาหาดใหญ่ (074-354-998) | สุวรรณาเภสัช (075-663-460) | วังเภสัช (074-366-681) | ฟาร์มาเพล็กซ์ (074-235-739) | สันติเฮลท์แคร์ (076-233-1201) | สนั่น ฟาร์มาซี (077-361-406)
+            </td>
+        </tr>
+    </table>
+
+    <h3>หน้าที 5: ติดต่อเรา (Contact Us)</h3>
+    <p>เพิ่มความสะดวกในการติดต่อด้วยข้อมูลพิกัดและระบบแชทอัตโนมัติ:</p>
+    
+    <div style="background-color: #fff4f8; padding: 15px; border-radius: 6px; border: 1px dashed #db548a;">
+        <strong>🏢 สำนักงานใหญ่ King Health Care</strong><br>
+        48 ซอยรัชดาภิเษก 7/1 ถนนรัชดาภิเษก (ท่าพระ-ตากสิน) แขวงบุคคโล เขตธนบุรี กรุงเทพมหานคร 10600<br>
+        📞 <strong>โทรศัพท์:</strong> 02-476-5765 &nbsp;|&nbsp; 📠 <strong>โทรสาร:</strong> 02-873-8411<br>
+        📧 <strong>อีเมลฝ่ายการตลาด:</strong> marketingteam@kinghealthcarethailand.com<br>
+        🌐 <strong>เว็บไซต์หลัก:</strong> <a href="https://kinghealthcarethailand.com/" style="color: #db548a; text-decoration: none; font-weight: bold;">kinghealthcarethailand.com</a>
+    </div>
+    
+    <p style="margin-top: 15px;">
+        <strong>ฟีเจอร์เด่นที่จะติดตั้งเพิ่มในหน้านี้:</strong><br>
+        1. 🗺️ <strong>Google Maps API:</strong> ปรับหมุดแผนที่ให้กดลิงก์แล้วนำทางผ่านแอปพลิเคชันบนมือถือได้ทันที<br>
+        2. 💬 <strong>Floating Live Chat Widget:</strong> ติดตั้งปุ่มแชท LINE OA ลอยอยู่ที่มุมขวาล่างของทุกหน้า เพื่อให้ลูกค้าสามารถกดพูดคุยกับเภสัชกรหรือแอดมินได้ตลอดเวลา
+    </p>
+
+    <h2>3. คำแนะนำด้านเทคนิคเพิ่มเติมสำหรับผู้พัฒนาเว็บ (Technical Recommendations)</h2>
+    <ol>
+        <li><strong>Mobile First Design:</strong> โครงสร้างหน้าเว็บทั้งหมดต้องแสดงผลบนหน้าจอสมาร์ทโฟนได้อย่างสวยงาม ตัวอักษรอ่านง่าย ปุ่มกดสั่งซื้อออนไลน์ (Shopee/Lazada) มีขนาดใหญ่พอดีกับนิ้วมือ</li>
+        <li><strong>SEO Optimization:</strong> กำหนดรายละเอียด Meta Title และ Meta Description ของแต่ละหน้า โดยระบุคำสำคัญ เช่น "ลิปบาล์มเภสัชกร", "ลิปแก้ปากดำ", "Ultra Lip Treatment สั่งซื้อออนไลน์" เพื่อให้ติดหน้าแรกในการค้นหาบน Google</li>
+    </ol>
+
+</body>
+</html>
+"""
+
+with open("king_health_care_website_blueprint.html", "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+HTML("king_health_care_website_blueprint.html").write_pdf("king_health_care_website_blueprint.pdf")
+print("PDF created successfully.")
