@@ -1,12 +1,3 @@
-import os
-import shutil
-
-# สร้างโฟลเดอร์สำหรับ Vercel
-deploy_dir = "vercel_deploy"
-os.makedirs(deploy_dir, exist_ok=True)
-
-# โค้ด HTML เดิม
-html_content = """
 <!DOCTYPE html>
 <html lang="th">
 <head>
@@ -183,7 +174,7 @@ html_content = """
         /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
-                display: none; /* Simplification for mobile view */
+                display: none; /* ซ่อนเมนูบนมือถือเพื่อให้ดูสะอาดตา */
             }
         }
     </style>
@@ -211,7 +202,6 @@ html_content = """
 
         <h2 id="products">ผลิตภัณฑ์ของเรา</h2>
         <div class="product-grid">
-            <!-- Product 1 -->
             <div class="product-card">
                 <span class="badge">ผลิตภัณฑ์แนะนำ</span>
                 <div class="product-title">Ultra Lip Treatment</div>
@@ -223,7 +213,6 @@ html_content = """
                 </div>
             </div>
             
-            <!-- Product 2 -->
             <div class="product-card">
                 <span class="badge">สูตรอ่อนโยน</span>
                 <div class="product-title">Soft Lip Care Pink</div>
@@ -235,7 +224,6 @@ html_content = """
                 </div>
             </div>
             
-            <!-- Product 3 -->
             <div class="product-card">
                 <span class="badge">สินค้าขายดี</span>
                 <div class="product-title">Lips Care</div>
@@ -283,22 +271,3 @@ html_content = """
 
 </body>
 </html>
-"""
-
-# เขียนลงไฟล์ index.html ในโฟลเดอร์ vercel_deploy
-with open(os.path.join(deploy_dir, "index.html"), "w", encoding="utf-8") as f:
-    f.write(html_content)
-
-# สร้างไฟล์ vercel.json เผื่อไว้ (Optional แต่ดีสำหรับการตั้งค่า)
-vercel_config = """
-{
-  "name": "king-healthcare-prototype",
-  "version": 2
-}
-"""
-with open(os.path.join(deploy_dir, "vercel.json"), "w", encoding="utf-8") as f:
-    f.write(vercel_config)
-
-# Zip โฟลเดอร์
-shutil.make_archive("king_healthcare_vercel", 'zip', deploy_dir)
-print("Zip file for Vercel created successfully.")
