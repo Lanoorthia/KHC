@@ -1,235 +1,468 @@
-<!DOCTYPE html>
-<html lang="th">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>King Health Care | เกสัชกร — ลิปบำรุงริมฝีปากคุณภาพเภสัชกร</title>
-<meta name="description" content="เกสัชกร by King Health Care ผลิตภัณฑ์บำรุงริมฝีปากคุณภาพเภสัชกร ปลอดภัย ได้มาตรฐาน สั่งซื้อออนไลน์ได้ทันทีผ่าน Shopee, Lazada, LINE และ TikTok Shop">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+/* ===========================================================
+   KING HEALTH CARE — เกสัชกร
+   Design tokens
+   Blush Cream #FBF3EF  | Petal #F7B8CF | Rose Bloom #D6467E
+   Deep Plum #5B1F3C    | Gold Sand #D9A96A | Ink #2A2226
+=========================================================== */
+:root{
+  --cream: #FBF3EF;
+  --cream-2: #FFFDFB;
+  --petal: #F7B8CF;
+  --petal-soft: #FBDCE6;
+  --rose: #D6467E;
+  --rose-dark: #B6316A;
+  --plum: #5B1F3C;
+  --ink: #2A2226;
+  --ink-soft: #6B5B60;
+  --gold: #D9A96A;
+  --line-green: #06C755;
 
-<header class="site-header">
-  <nav class="nav">
-    <a href="index.html" class="brand">
-      <div class="mark">ก</div>
-      <div class="word">KING HEALTH CARE<small>เกสัชกร · Pharmacist Lip Care</small></div>
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">หน้าแรก</a></li>
-      <li><a href="products.html">ผลิตภัณฑ์</a></li>
-      <li><a href="about.html">เกี่ยวกับเรา</a></li>
-      <li><a href="distributors.html">ตัวแทนจำหน่าย</a></li>
-      <li><a href="contact.html">ติดต่อเรา</a></li>
-    </ul>
-    <div style="display:flex;align-items:center;">
-      <div class="nav-social">
-        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg></a>
-        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-        <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.8c-.9-.9-1.4-2.1-1.4-3.4h-3.1v13.9a2.6 2.6 0 1 1-1.9-2.5V10.7a5.7 5.7 0 1 0 5 5.7V9.5a6.6 6.6 0 0 0 4.1 1.4V7.8a3.4 3.4 0 0 1-2.7-2z"/></svg></a>
-      </div>
-      <button class="nav-toggle" aria-label="เปิดเมนู">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-      </button>
-    </div>
-  </nav>
-</header>
+  --display: 'Kanit', 'Prompt', sans-serif;
+  --body: 'Prompt', 'Kanit', sans-serif;
 
-<!-- HERO -->
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div class="reveal">
-      <div class="eyebrow">คิดค้นและพัฒนาโดยเภสัชกร</div>
-      <h1>ริมฝีปากฟู ชุ่มชื่น<br>ด้วยสูตร<em>เกสัชกร</em></h1>
-      <p class="lead">ลิปบำรุงริมฝีปากคุณภาพเภสัชกร อ่อนโยน ปลอดภัย ราคาที่คนไทยทุกคนเข้าถึงได้ พร้อมสูตรต่อต้านริ้วรอยและฟื้นบำรุงผิวปากที่แห้งกร้าน</p>
-      <div class="hero-cta">
-        <a href="products.html" class="btn btn-primary">สั่งซื้อออนไลน์เลย
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-        <a href="#promo" class="btn btn-outline">ดูโปรโมชั่นพิเศษ</a>
-      </div>
-      <div class="hero-badges">
-        <div class="hero-badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 4 8.5 8 10 4-1.5 8-5 8-10V6l-8-4z"/></svg>
-          คิดค้นโดยเภสัชกร
-        </div>
-        <div class="hero-badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5-1.5 8-5 8-10V6l-8-4-8 4v6c0 5 3 8.5 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
-          ผ่านมาตรฐานการผลิต
-        </div>
-        <div class="hero-badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg>
-          ส่งไว ทั่วไทย
-        </div>
-      </div>
-    </div>
-    <div class="hero-visual reveal">
-      <div class="tin tin-1"><span>Ultra Lip<br>Treatment</span></div>
-      <div class="tin tin-2"><span>Soft Lip<br>Care</span></div>
-      <div class="tin tin-3"><span>Lips<br>Care</span></div>
-    </div>
-  </div>
-  <div class="hero-dots">
-    <span class="active"></span><span></span><span></span>
-  </div>
-</section>
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --radius-sm: 10px;
+  --shadow-soft: 0 10px 30px rgba(91,31,60,0.08);
+  --shadow-lift: 0 18px 40px rgba(91,31,60,0.14);
+  --container: 1160px;
+}
 
-<!-- FEATURES -->
-<section id="promo">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow" style="justify-content:center">ทำไมต้องเกสัชกร</div>
-      <h2>บำรุงริมฝีปากอย่างมั่นใจ<br>ในทุกวัน</h2>
-    </div>
-    <div class="feature-row">
-      <div class="feature reveal">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 4 8.5 8 10 4-1.5 8-5 8-10V6l-8-4z"/></svg></div>
-        <h4>สูตรจากเภสัชกร</h4>
-        <p>คิดค้นและควบคุมคุณภาพโดยเภสัชกรผู้เชี่ยวชาญ มั่นใจในความปลอดภัย</p>
-      </div>
-      <div class="feature reveal">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.5-9.5-9C.5 8 2 4 6 4c2 0 3.5 1.2 4 2 .5-.8 2-2 4-2 4 0 5.5 4 3.5 8-2.5 4.5-9.5 9-9.5 9Z"/></svg></div>
-        <h4>อ่อนโยนต่อผิวปาก</h4>
-        <p>ปราศจากสารระคายเคือง เหมาะกับผิวแพ้ง่าย ใช้ได้ทุกเพศทุกวัย</p>
-      </div>
-      <div class="feature reveal">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg></div>
-        <h4>ราคาเข้าถึงง่าย</h4>
-        <p>ตั้งใจให้คนไทยทุกคนได้ใช้ของดี ในราคาที่สมเหตุสมผล</p>
-      </div>
-      <div class="feature reveal">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v13H7l-4 4V3z"/></svg></div>
-        <h4>สั่งซื้อง่าย หลายช่องทาง</h4>
-        <p>Shopee, Lazada, LINE OA และ TikTok Shop พร้อมส่งถึงบ้านคุณ</p>
-      </div>
-    </div>
-  </div>
-</section>
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:var(--body);
+  color:var(--ink);
+  background:var(--cream);
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{
+  font-family:var(--display);
+  color:var(--plum);
+  margin:0 0 .5em;
+  line-height:1.2;
+}
+p{line-height:1.75; color:var(--ink-soft); margin:0 0 1em;}
+a{color:inherit; text-decoration:none;}
+img{max-width:100%; display:block;}
+ul{margin:0; padding:0; list-style:none;}
+.wrap{max-width:var(--container); margin:0 auto; padding:0 24px;}
+section{padding:88px 0;}
+@media(max-width:720px){section{padding:56px 0;}}
 
-<!-- PRODUCTS PREVIEW -->
-<section style="background:var(--cream-2)">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow" style="justify-content:center">ผลิตภัณฑ์ขายดี</div>
-      <h2>เลือกสูตรที่ใช่ สำหรับริมฝีปากคุณ</h2>
-    </div>
-    <div class="grid-3">
-      <div class="product-card reveal">
-        <div class="product-media media-a">
-          <span class="product-tag">ขายดีอันดับ 1</span>
-        </div>
-        <div class="product-body">
-          <h3>Ultra Lip Treatment</h3>
-          <div class="product-price">฿259</div>
-          <p class="product-desc">ลิปบำรุงริมฝีปากสูตรต่อต้านริ้วรอย ฟื้นฟูผิวปากแห้งกร้านให้ฟูชุ่มชื่น</p>
-          <a href="products.html#ultra-lip" class="detail-link">ดูรายละเอียดสินค้า →</a>
-        </div>
-      </div>
-      <div class="product-card reveal">
-        <div class="product-media media-b">
-          <span class="product-tag">สูตรอ่อนโยน</span>
-        </div>
-        <div class="product-body">
-          <h3>Soft Lip Care</h3>
-          <div class="product-price">฿199</div>
-          <p class="product-desc">เนื้อบางเบา ซึมไว เหมาะสำหรับผิวปากบอบบางแพ้ง่าย ใช้ได้ทุกวัน</p>
-          <a href="products.html#soft-lip" class="detail-link">ดูรายละเอียดสินค้า →</a>
-        </div>
-      </div>
-      <div class="product-card reveal">
-        <div class="product-media media-c">
-          <span class="product-tag">คลาสสิก</span>
-        </div>
-        <div class="product-body">
-          <h3>Lips Care</h3>
-          <div class="product-price">฿149</div>
-          <p class="product-desc">สูตรออริจินัลที่ลูกค้าไว้วางใจ บำรุงเข้มข้น พกพาสะดวก</p>
-          <a href="products.html#lips-care" class="detail-link">ดูรายละเอียดสินค้า →</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+.eyebrow{
+  font-family:var(--body);
+  font-weight:600;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--rose-dark);
+  font-size:.78rem;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:14px;
+}
+.eyebrow::before{
+  content:"";
+  width:22px; height:2px;
+  background:var(--gold);
+  display:inline-block;
+}
 
-<!-- CTA BAND -->
-<section>
-  <div class="wrap">
-    <div class="band reveal">
-      <div>
-        <h3>พร้อมให้ริมฝีปากคุณฟูชุ่มชื่นแล้วหรือยัง?</h3>
-        <p>สั่งซื้อวันนี้ ผ่านช่องทางออนไลน์ที่คุณสะดวก จัดส่งรวดเร็วทั่วประเทศ</p>
-      </div>
-      <a href="products.html" class="btn btn-ghost-white">ช้อปสินค้าทั้งหมด
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
+/* Buttons */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:14px 28px;
+  border-radius:999px;
+  font-weight:600;
+  font-size:1rem;
+  cursor:pointer;
+  border:2px solid transparent;
+  transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+  white-space:nowrap;
+}
+.btn:hover{transform:translateY(-2px);}
+.btn-primary{
+  background:linear-gradient(135deg,var(--rose),var(--rose-dark));
+  color:#fff;
+  box-shadow:0 10px 24px rgba(214,70,126,0.35);
+}
+.btn-primary:hover{box-shadow:0 14px 30px rgba(214,70,126,0.45);}
+.btn-outline{
+  background:transparent;
+  border-color:var(--rose);
+  color:var(--rose-dark);
+}
+.btn-outline:hover{background:var(--petal-soft);}
+.btn-ghost-white{
+  background:rgba(255,255,255,0.16);
+  border-color:rgba(255,255,255,0.6);
+  color:#fff;
+  backdrop-filter:blur(4px);
+}
+.btn-ghost-white:hover{background:rgba(255,255,255,0.28);}
+.btn-block{width:100%; justify-content:center;}
+.btn-sm{padding:10px 18px; font-size:.9rem;}
 
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand">
-          <div class="mark">ก</div>
-          <div style="font-family:var(--display);font-weight:700;">KING HEALTH CARE</div>
-        </div>
-        <p style="color:rgba(255,255,255,0.7); font-size:.9rem;">เกสัชกร — ผลิตภัณฑ์บำรุงริมฝีปากคุณภาพเภสัชกร เพื่อคนไทยทุกคน</p>
-        <div class="footer-social">
-          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg></a>
-          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-          <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23 22h-6.9l-5.4-6.7L4.5 22H1.4l8.1-9.3L1 2h7l4.9 6.1L18.9 2Z"/></svg></a>
-          <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.8c-.9-.9-1.4-2.1-1.4-3.4h-3.1v13.9a2.6 2.6 0 1 1-1.9-2.5V10.7a5.7 5.7 0 1 0 5 5.7V9.5a6.6 6.6 0 0 0 4.1 1.4V7.8a3.4 3.4 0 0 1-2.7-2z"/></svg></a>
-        </div>
-      </div>
-      <div>
-        <h5>เมนู</h5>
-        <ul>
-          <li><a href="index.html">หน้าแรก</a></li>
-          <li><a href="products.html">ผลิตภัณฑ์</a></li>
-          <li><a href="about.html">เกี่ยวกับเรา</a></li>
-          <li><a href="distributors.html">ตัวแทนจำหน่าย</a></li>
-          <li><a href="contact.html">ติดต่อเรา</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>ช่องทางสั่งซื้อ</h5>
-        <ul>
-          <li><a href="#">Shopee</a></li>
-          <li><a href="#">Lazada</a></li>
-          <li><a href="#">LINE OA</a></li>
-          <li><a href="#">TikTok Shop</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>ติดต่อ</h5>
-        <ul>
-          <li><a href="tel:024765765">โทร. 02-476-5765</a></li>
-          <li><a href="mailto:marketingteam@kinghealthcarethailand.com">อีเมล</a></li>
-          <li><a href="contact.html">แผนที่ร้าน</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 kinghealthcarethailand.com สงวนลิขสิทธิ์</span>
-      <span>Redesigned with care 💕</span>
-    </div>
-  </div>
-</footer>
+/* ===================== HEADER ===================== */
+.site-header{
+  position:sticky; top:0; z-index:200;
+  background:rgba(251,243,239,0.86);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(91,31,60,0.06);
+}
+.nav{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 24px; max-width:var(--container); margin:0 auto;
+}
+.brand{display:flex; align-items:center; gap:12px;}
+.brand .mark{
+  width:46px; height:46px; border-radius:50%;
+  background:linear-gradient(160deg,var(--petal),var(--rose));
+  display:flex; align-items:center; justify-content:center;
+  color:#fff; font-family:var(--display); font-weight:700; font-size:1.2rem;
+  box-shadow:0 6px 16px rgba(214,70,126,0.35);
+}
+.brand .word{
+  font-family:var(--display); font-weight:700; letter-spacing:.02em;
+  color:var(--plum); font-size:1.18rem; line-height:1;
+}
+.brand .word small{
+  display:block; font-family:var(--body); font-weight:400;
+  color:var(--rose-dark); font-size:.68rem; letter-spacing:.16em; margin-top:3px;
+}
+.nav-links{display:flex; gap:6px; align-items:center;}
+.nav-links a{
+  padding:10px 16px; border-radius:999px; font-weight:500; font-size:.95rem;
+  color:var(--ink); transition:background .15s, color .15s;
+}
+.nav-links a:hover, .nav-links a.active{
+  background:var(--petal-soft); color:var(--rose-dark);
+}
+.nav-social{display:flex; gap:8px; margin-left:8px;}
+.nav-social a{
+  width:34px; height:34px; border-radius:50%;
+  background:var(--plum); color:#fff;
+  display:flex; align-items:center; justify-content:center;
+}
+.nav-social svg{width:16px; height:16px;}
+.nav-toggle{display:none; background:none; border:none; cursor:pointer; padding:6px;}
+.nav-toggle svg{width:26px; height:26px; color:var(--plum);}
 
-<!-- FLOATING CHAT -->
-<div class="floating-chat">
-  <div class="fc-options">
-    <a class="fc-option" href="#"><span class="ico" style="background:#06C755"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 5.8 2 10.5c0 2.7 1.5 5.1 3.9 6.7-.2.9-.7 2.5-.8 2.9-.1.5.2.5.4.4.2-.1 2.7-1.8 3.8-2.5.9.2 1.8.4 2.7.4 5.5 0 10-3.8 10-8.5S17.5 2 12 2Z"/></svg></span>แชท LINE</a>
-    <a class="fc-option" href="tel:024765765"><span class="ico" style="background:var(--rose)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .6 2.9a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.5 2.9.6a2 2 0 0 1 1.8 2Z"/></svg></span>โทรหาเรา</a>
-  </div>
-  <button class="fc-main" aria-label="แชทกับเรา">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg>
-  </button>
-</div>
+@media(max-width:900px){
+  .nav-links{
+    position:fixed; inset:70px 16px auto 16px;
+    background:var(--cream-2); border-radius:var(--radius-md);
+    flex-direction:column; align-items:stretch; padding:12px;
+    box-shadow:var(--shadow-lift);
+    transform:translateY(-12px); opacity:0; pointer-events:none;
+    transition:all .2s ease;
+  }
+  .nav-links.open{transform:translateY(0); opacity:1; pointer-events:auto;}
+  .nav-links a{padding:12px 16px;}
+  .nav-social{display:none;}
+  .nav-toggle{display:block;}
+}
 
-<script src="js/main.js"></script>
-</body>
-</html>
+/* ===================== HERO ===================== */
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding:70px 0 40px;
+  background:
+    radial-gradient(circle at 85% 10%, rgba(247,184,207,0.55), transparent 55%),
+    radial-gradient(circle at 5% 90%, rgba(217,169,106,0.18), transparent 45%),
+    var(--cream);
+}
+.hero-grid{
+  display:grid; grid-template-columns:1.05fr .95fr; gap:48px; align-items:center;
+}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;}}
+.hero h1{font-size:clamp(2.1rem,4vw,3.1rem); font-weight:700;}
+.hero h1 em{
+  font-style:normal; color:var(--rose);
+  position:relative; white-space:nowrap;
+}
+.hero p.lead{font-size:1.08rem; max-width:46ch;}
+.hero-cta{display:flex; gap:14px; flex-wrap:wrap; margin-top:26px;}
+.hero-badges{display:flex; gap:22px; margin-top:36px; flex-wrap:wrap;}
+.hero-badge{display:flex; align-items:center; gap:10px; font-size:.88rem; color:var(--ink-soft); font-weight:500;}
+.hero-badge svg{width:20px; height:20px; color:var(--rose-dark); flex-shrink:0;}
+
+/* Hero visual: stacked lip-tin swatches */
+.hero-visual{position:relative; height:420px;}
+.tin{
+  position:absolute; border-radius:50%;
+  box-shadow:var(--shadow-lift);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--display); color:#fff; text-align:center;
+}
+.tin span{font-size:.72rem; font-weight:600; letter-spacing:.04em; padding:0 10px;}
+.tin-1{width:230px; height:230px; right:20px; top:10px; background:radial-gradient(circle at 35% 30%,#F7C9DA,var(--rose) 75%);}
+.tin-2{width:170px; height:170px; left:10px; top:120px; background:radial-gradient(circle at 35% 30%,#fff,#F0B7CC 75%); border:6px solid #fff;}
+.tin-2 span{color:var(--plum);}
+.tin-3{width:140px; height:140px; right:60px; bottom:20px; background:radial-gradient(circle at 35% 30%,#EBC79A,var(--gold) 75%);}
+@media(max-width:900px){.hero-visual{height:300px;}
+  .tin-1{width:180px;height:180px;} .tin-2{width:130px;height:130px;top:90px;} .tin-3{width:110px;height:110px;}
+}
+
+/* dots slider (kept minimal, decorative) */
+.hero-dots{display:flex; gap:8px; justify-content:center; margin-top:26px;}
+.hero-dots span{width:7px; height:7px; border-radius:50%; background:var(--petal);}
+.hero-dots span.active{background:var(--rose); width:22px; border-radius:6px;}
+
+/* ===================== SECTION HEADERS ===================== */
+.section-head{max-width:640px; margin:0 auto 48px; text-align:center;}
+.section-head.left{text-align:left; margin:0 0 40px;}
+
+/* ===================== PRODUCT CARDS ===================== */
+.grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
+@media(max-width:900px){.grid-3{grid-template-columns:1fr;}}
+
+.product-card{
+  background:var(--cream-2);
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  box-shadow:var(--shadow-soft);
+  transition:transform .22s ease, box-shadow .22s ease;
+  display:flex; flex-direction:column;
+}
+.product-card:hover{transform:translateY(-6px); box-shadow:var(--shadow-lift);}
+.product-media{
+  aspect-ratio:1/1;
+  display:flex; align-items:center; justify-content:center;
+  position:relative;
+}
+.product-tag{
+  position:absolute; top:16px; left:16px;
+  background:rgba(255,255,255,0.85); color:var(--rose-dark);
+  font-size:.72rem; font-weight:600; padding:5px 12px; border-radius:999px;
+  letter-spacing:.02em;
+}
+.product-body{padding:22px 22px 26px; display:flex; flex-direction:column; gap:10px; flex:1;}
+.product-body h3{font-size:1.15rem; margin-bottom:0;}
+.product-price{color:var(--rose-dark); font-weight:700; font-size:1.05rem;}
+.product-desc{font-size:.92rem; margin-bottom:4px;}
+.product-links{display:flex; flex-wrap:wrap; gap:8px; margin-top:auto;}
+.shop-btn{
+  display:flex; align-items:center; gap:6px;
+  padding:9px 14px; border-radius:999px; font-size:.82rem; font-weight:600;
+  color:#fff; flex:1; justify-content:center; min-width:120px;
+  transition:filter .15s, transform .15s;
+}
+.shop-btn:hover{filter:brightness(1.08); transform:translateY(-1px);}
+.shop-btn svg{width:15px; height:15px;}
+.shop-shopee{background:#EE4D2D;}
+.shop-lazada{background:#0F146D;}
+.shop-line{background:#06C755;}
+.shop-tiktok{background:#000;}
+.detail-link{
+  font-size:.85rem; font-weight:600; color:var(--rose-dark); align-self:flex-start;
+  border-bottom:1px solid var(--rose); padding-bottom:1px;
+}
+
+/* Product tin illustration (SVG generated via css classes on media bg) */
+.media-a{background:linear-gradient(150deg,#F3D9C6,#EFC4A6);}
+.media-b{background:linear-gradient(150deg,#FBE1E9,#F6B9CE);}
+.media-c{background:linear-gradient(150deg,#F8CBDA,#E98BAF);}
+
+/* ===================== TRUST / FEATURES ===================== */
+.feature-row{display:grid; grid-template-columns:repeat(4,1fr); gap:24px;}
+@media(max-width:900px){.feature-row{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:520px){.feature-row{grid-template-columns:1fr;}}
+.feature{
+  background:var(--cream-2); border-radius:var(--radius-md); padding:26px 22px;
+  box-shadow:var(--shadow-soft);
+}
+.feature .icon{
+  width:48px; height:48px; border-radius:14px;
+  background:var(--petal-soft); color:var(--rose-dark);
+  display:flex; align-items:center; justify-content:center; margin-bottom:14px;
+}
+.feature .icon svg{width:24px; height:24px;}
+.feature h4{font-size:1.02rem; margin-bottom:6px;}
+.feature p{font-size:.9rem; margin:0;}
+
+/* ===================== BAND / CTA STRIP ===================== */
+.band{
+  background:linear-gradient(120deg,var(--plum),var(--rose-dark));
+  color:#fff; border-radius:var(--radius-lg);
+  padding:48px; display:flex; align-items:center; justify-content:space-between; gap:24px;
+  flex-wrap:wrap;
+}
+.band h3{color:#fff; margin-bottom:6px; font-size:1.5rem;}
+.band p{color:rgba(255,255,255,0.82); margin:0;}
+
+/* ===================== PAGE HERO (inner pages) ===================== */
+.page-hero{
+  position:relative; padding:64px 0 56px; text-align:center; overflow:hidden;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(247,184,207,0.6), transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(217,169,106,0.22), transparent 50%),
+    var(--cream);
+}
+.page-hero h1{font-size:clamp(1.8rem,3.4vw,2.6rem);}
+.breadcrumb{font-size:.85rem; color:var(--ink-soft); margin-bottom:12px;}
+.breadcrumb a{color:var(--rose-dark); font-weight:600;}
+.petal-deco{position:absolute; opacity:.5; pointer-events:none;}
+
+/* ===================== ABOUT ===================== */
+.about-grid{display:grid; grid-template-columns:.9fr 1.1fr; gap:56px; align-items:center;}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr;}}
+.about-photo{
+  aspect-ratio:4/5; border-radius:var(--radius-lg); position:relative; overflow:hidden;
+  background:linear-gradient(160deg,#F6C7D8,#D6467E);
+  display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-lift);
+}
+.about-photo .pill{
+  position:absolute; bottom:20px; left:20px; right:20px;
+  background:rgba(255,255,255,0.92); border-radius:16px; padding:14px 18px;
+  font-size:.85rem; color:var(--plum); font-weight:600;
+}
+.timeline{border-left:2px solid var(--petal); margin-left:6px; padding-left:26px; display:flex; flex-direction:column; gap:26px;}
+.timeline .t-item{position:relative;}
+.timeline .t-item::before{
+  content:""; position:absolute; left:-32px; top:4px; width:12px; height:12px; border-radius:50%;
+  background:var(--rose); border:3px solid var(--cream);
+}
+.timeline h4{margin-bottom:4px; font-size:1rem;}
+.timeline p{font-size:.92rem; margin:0;}
+
+.value-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:20px;}
+@media(max-width:900px){.value-grid{grid-template-columns:1fr;}}
+.value-card{text-align:center; padding:28px 20px;}
+.value-card .icon{
+  width:56px; height:56px; border-radius:50%; margin:0 auto 14px;
+  background:var(--petal-soft); color:var(--rose-dark);
+  display:flex; align-items:center; justify-content:center;
+}
+.value-card .icon svg{width:26px; height:26px;}
+
+/* ===================== DISTRIBUTORS ===================== */
+.locator{
+  background:var(--cream-2); border-radius:var(--radius-lg); box-shadow:var(--shadow-soft);
+  padding:26px; margin-bottom:36px;
+  display:grid; grid-template-columns:1fr 1fr 1fr auto; gap:14px; align-items:end;
+}
+@media(max-width:800px){.locator{grid-template-columns:1fr;}}
+.field label{display:block; font-size:.82rem; font-weight:600; color:var(--plum); margin-bottom:6px;}
+.field select, .field input{
+  width:100%; padding:12px 14px; border-radius:12px; border:1.5px solid var(--petal-soft);
+  background:#fff; font-family:var(--body); font-size:.95rem; color:var(--ink);
+}
+.field select:focus, .field input:focus{outline:none; border-color:var(--rose);}
+
+.region-block{margin-bottom:36px;}
+.region-title{
+  display:flex; align-items:center; gap:12px; margin-bottom:18px;
+}
+.region-title h3{margin:0; font-size:1.2rem;}
+.region-title .count{
+  background:var(--petal-soft); color:var(--rose-dark); font-size:.78rem; font-weight:700;
+  padding:3px 12px; border-radius:999px;
+}
+.store-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px;}
+@media(max-width:700px){.store-grid{grid-template-columns:1fr;}}
+.store-card{
+  background:var(--cream-2); border-radius:var(--radius-md); padding:16px 18px;
+  display:flex; justify-content:space-between; align-items:center; gap:10px;
+  box-shadow:var(--shadow-soft);
+}
+.store-name{font-weight:600; color:var(--plum); font-size:.96rem;}
+.store-actions{display:flex; align-items:center; gap:14px; flex-shrink:0;}
+.store-phone{font-size:.88rem; color:var(--ink-soft); font-weight:500;}
+.store-map{
+  display:flex; align-items:center; gap:5px; font-size:.8rem; color:var(--rose-dark); font-weight:600;
+}
+.store-map svg{width:14px; height:14px;}
+.no-results{text-align:center; color:var(--ink-soft); padding:40px 0; display:none;}
+
+/* ===================== CONTACT ===================== */
+.contact-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:40px;}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr;}}
+.contact-form{
+  background:var(--cream-2); border-radius:var(--radius-lg); padding:32px; box-shadow:var(--shadow-soft);
+}
+.form-row{margin-bottom:18px;}
+.form-row label{display:block; font-size:.88rem; font-weight:600; color:var(--plum); margin-bottom:6px;}
+.form-row input, .form-row textarea{
+  width:100%; padding:13px 16px; border-radius:12px; border:1.5px solid var(--petal-soft);
+  font-family:var(--body); font-size:.95rem; background:#fff; color:var(--ink);
+}
+.form-row textarea{resize:vertical; min-height:120px;}
+.form-row input:focus, .form-row textarea:focus{outline:none; border-color:var(--rose);}
+
+.contact-info{display:flex; flex-direction:column; gap:22px;}
+.info-card{
+  background:var(--cream-2); border-radius:var(--radius-md); padding:22px; box-shadow:var(--shadow-soft);
+  display:flex; gap:16px; align-items:flex-start;
+}
+.info-card .icon{
+  width:42px; height:42px; border-radius:12px; background:var(--petal-soft); color:var(--rose-dark);
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+}
+.info-card .icon svg{width:20px; height:20px;}
+.info-card h4{margin-bottom:4px; font-size:.98rem;}
+.info-card p{margin:0; font-size:.9rem;}
+.map-frame{border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-soft); margin-top:36px;}
+.map-frame iframe{width:100%; height:360px; border:0; display:block;}
+
+/* ===================== FOOTER ===================== */
+.site-footer{background:var(--plum); color:rgba(255,255,255,0.82); padding:56px 0 28px; margin-top:40px;}
+.footer-grid{display:grid; grid-template-columns:1.3fr 1fr 1fr 1fr; gap:32px;}
+@media(max-width:800px){.footer-grid{grid-template-columns:1fr 1fr;}}
+.footer-grid h5{color:#fff; font-family:var(--display); font-size:.95rem; margin-bottom:16px; letter-spacing:.03em;}
+.footer-grid ul li{margin-bottom:10px;}
+.footer-grid a{font-size:.9rem; color:rgba(255,255,255,0.75); transition:color .15s;}
+.footer-grid a:hover{color:var(--petal);}
+.footer-brand{display:flex; align-items:center; gap:10px; margin-bottom:14px;}
+.footer-brand .mark{
+  width:40px; height:40px; border-radius:50%; background:rgba(255,255,255,0.14);
+  display:flex; align-items:center; justify-content:center; color:#fff; font-family:var(--display); font-weight:700;
+}
+.footer-social{display:flex; gap:10px; margin-top:16px;}
+.footer-social a{
+  width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.12);
+  display:flex; align-items:center; justify-content:center; color:#fff;
+}
+.footer-social svg{width:16px; height:16px;}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,0.14); margin-top:40px; padding-top:22px;
+  display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+  font-size:.82rem; color:rgba(255,255,255,0.55);
+}
+
+/* ===================== FLOATING CHAT ===================== */
+.floating-chat{
+  position:fixed; right:22px; bottom:22px; z-index:300;
+  display:flex; flex-direction:column; align-items:flex-end; gap:10px;
+}
+.fc-options{
+  display:flex; flex-direction:column; gap:10px; margin-bottom:4px;
+  opacity:0; transform:translateY(10px); pointer-events:none; transition:all .2s ease;
+}
+.fc-options.open{opacity:1; transform:translateY(0); pointer-events:auto;}
+.fc-option{
+  display:flex; align-items:center; gap:10px; background:#fff; padding:10px 16px 10px 10px;
+  border-radius:999px; box-shadow:var(--shadow-lift); font-size:.86rem; font-weight:600; color:var(--plum);
+}
+.fc-option .ico{width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff;}
+.fc-option .ico svg{width:16px; height:16px;}
+.fc-main{
+  width:60px; height:60px; border-radius:50%; border:none; cursor:pointer;
+  background:linear-gradient(135deg,var(--rose),var(--rose-dark));
+  color:#fff; box-shadow:0 12px 26px rgba(214,70,126,0.45);
+  display:flex; align-items:center; justify-content:center;
+}
+.fc-main svg{width:26px; height:26px;}
+
+/* reveal on scroll */
+.reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
+.reveal.in{opacity:1; transform:translateY(0);}
+
+@media (prefers-reduced-motion: reduce){
+  *{transition:none !important; scroll-behavior:auto !important;}
+}
